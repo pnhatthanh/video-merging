@@ -24,12 +24,12 @@
         			error=(String)request.getAttribute("errorMsg");
         		}
         	%>
-            <form class="login-form">
+            <form action="login" method="POST" class="login-form">
                 <h2>Welcome Back</h2>
                 <span style="color: red"><%=error%></span>
                 <div class="input-group">
                     <label for="username">Địa chỉ email</label>
-                    <input type="email" id="username" name="username" placeholder="Enter your username" required>
+                    <input type="email" id="username" name="email" placeholder="Enter your username" required>
                 </div>
                 <div class="input-group">
                     <label for="password">Mật khẩu</label>

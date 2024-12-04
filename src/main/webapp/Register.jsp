@@ -18,23 +18,23 @@
     </section>
     <section  class="body">
         <div class="container">
-            <form class="form">
+            <form method="POST" action="register" class="form">
                 <h2>Đăng ký tại đây</h2>
                 <div class="input-group">
-                    <label for="username">Họ và tên</label>
-                    <input type="email" id="username" name="username" placeholder="Enter your username" required>
+                    <label for="fullName">Họ và tên</label>
+                    <input type="email" id="fullName" name="fullName" placeholder="Enter your username" required>
                 </div>
                 <div class="input-group">
                     <label for="username">Địa chỉ email</label>
-                    <input type="email" id="username" name="username" placeholder="Enter your username" required>
+                    <input type="email" id="username" name="email" placeholder="Enter your username" required>
                 </div>
                 <div class="input-group">
                     <label for="password">Mật khẩu</label>
                     <input type="password" id="password" name="password" placeholder="Enter your password" required>
                 </div>
                 <div class="input-group">
-                    <label for="password">Nhập lại mật khẩu</label>
-                    <input type="password" id="password" name="password" placeholder="Enter your password" required>
+                    <label for="retypePassword">Nhập lại mật khẩu</label>
+                    <input type="password" id="retypePassword" name="retypePassword" placeholder="Enter your password" required>
                 </div>
                 <button type="submit" class="btn">Đăng ký</button>
                 <div class="forgot-password">

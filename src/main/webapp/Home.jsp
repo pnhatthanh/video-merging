@@ -27,14 +27,15 @@
         </div>
         <div class="content">
             <h2>Upload Videos for Merging</h2>
-            <form action="" method="post" enctype="multipart/form-data">
+            <form action="" method="POST" enctype="multipart/form-data">
                 <div class="context-nameVideo">
                     <input class="name-file" type="text" placeholder="Enter file name here" required>
                     <span>.MP4</span>
                 </div>
                 <div class="video-preview" id="videoPreview-container">
-                    <input id="videoInput" type="file" name="videoFiles" accept="video/mp4" multiple required>
+                    
                 </div>
+                <input id="videoInput" type="file" name="videoFiles" accept="video/mp4" multiple required>
                 <div class="choice">
                     <button class="button-reset" type="reset" onclick="removeAllFile()">Cancel</button>
                     <button class="button-submit" type="submit">Submit</button>
