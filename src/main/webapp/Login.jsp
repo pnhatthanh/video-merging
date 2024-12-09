@@ -28,16 +28,16 @@
                 <h2>Welcome Back</h2>
                 <span style="color: red"><%=error%></span>
                 <div class="input-group">
-                    <label for="username">Địa chỉ email</label>
+                    <label for="username">Email address:</label>
                     <input type="email" id="username" name="email" placeholder="Enter your username" required>
                 </div>
                 <div class="input-group">
-                    <label for="password">Mật khẩu</label>
+                    <label for="password">Password</label>
                     <input type="password" id="password" name="password" placeholder="Enter your password" required>
                 </div>
                 <button type="submit" class="btn">Login</button>
                 <div class="forgot-password">
-                    <span>Bạn chưa có tài khoản?<a href="register"> Đăng ký ngay</a></span>
+                    <span>You don't have an account<a href="register">Sign up</a></span>
                 </div>
             </form>
         </div>

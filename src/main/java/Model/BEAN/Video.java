@@ -1,14 +1,14 @@
-package Model.BEAN;
+package model.bean;
 
 public class Video {
-	private String idVideo;
+	private int idVideo;
 	private String nameVideo;
 	private String userID;
 	private String pathVideo;
 	private String status;
 	
 	
-	public Video(String idVideo, String nameVideo, String userID, String pathVideo, String status) {
+	public Video(int idVideo, String nameVideo, String userID, String pathVideo, String status) {
 		super();
 		this.idVideo = idVideo;
 		this.nameVideo = nameVideo;
@@ -16,7 +16,7 @@ public class Video {
 		this.pathVideo = pathVideo;
 		this.status = status;
 	}
-	public String getIdVideo() {
+	public int getIdVideo() {
 		return idVideo;
 	}
 	public String getNameVideo() {

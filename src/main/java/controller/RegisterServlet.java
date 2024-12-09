@@ -1,6 +1,4 @@
-package Controler;
-
-import java.io.IOException;
+package controller;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -8,25 +6,27 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import java.io.IOException;
 
-import Model.BEAN.User;
-import Model.BO.UserBO;
+import model.bean.User;
+import model.BO.UserBO;
 
-/**
- * Servlet implementation class RegisterController
- */
 @WebServlet("/register")
-public class RegisterController extends HttpServlet {
+public class RegisterServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	private UserBO userBO;
        
-    public RegisterController() {
+    public RegisterServlet() {
         super();
         this.userBO=new UserBO();
     }
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		RequestDispatcher dispathcer=request.getRequestDispatcher("/Register.jsp");
-		dispathcer.forward(request, response);
+		if(request.getSession().getAttribute("userID")!=null) {
+			response.sendRedirect(request.getContextPath()+"/home");
+			return;
+		}
+		RequestDispatcher dispatcher=request.getRequestDispatcher("/Register.jsp");
+		dispatcher.forward(request, response);
 	}
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {

@@ -1,24 +1,26 @@
-package Controler;
+package controller;
 
 import java.io.IOException;
-
-import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
-@WebServlet("/home")
-public class HomeController extends HttpServlet {
+
+@WebServlet("/logout")
+public class LogoutServelet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-       
-    public HomeController() {
+    public LogoutServelet() {
         super();
     }
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		RequestDispatcher dispathcer=request.getRequestDispatcher("/Home.jsp");
-		dispathcer.forward(request, response);
+		HttpSession session=request.getSession(false);
+		if(session!=null) {
+			session.invalidate();
+		}
+		response.sendRedirect(request.getContextPath()+"/login");
 	}
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {

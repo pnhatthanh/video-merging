@@ -1,4 +1,4 @@
-package Model.BEAN;
+package model.bean;
 
 public class User {
 	private String id;

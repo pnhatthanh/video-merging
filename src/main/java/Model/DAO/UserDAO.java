@@ -1,12 +1,12 @@
-package Model.DAO;
+package model.DAO;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.util.UUID;
 
-import Model.BEAN.User;
-import Utils.DBConnection;
+import model.bean.User;
+import utils.DBConnection;
 
 public class UserDAO {
 	public User getUser(String email, String password) {
@@ -17,12 +17,11 @@ public class UserDAO {
 			statement.setString(1, email);
 			statement.setString(2, password);
 			ResultSet rs = statement.executeQuery();
-			while(rs.next()) {
-				User user=new User(rs.getString("id"),rs.getString("fullName"),rs.getString("email"),rs.getString("password"));
-				return user;
-			}
+			rs.next();
+			User user=new User(rs.getString("id"),rs.getString("fullName"),rs.getString("email"),rs.getString("password"));
 			statement.close();
 			connect.close();
+			return user;
 		} catch (Exception e) {
 			e.printStackTrace();
 		}

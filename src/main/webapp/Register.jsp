@@ -19,26 +19,26 @@
     <section  class="body">
         <div class="container">
             <form method="POST" action="register" class="form">
-                <h2>Đăng ký tại đây</h2>
+                <h2>Sign up</h2>
                 <div class="input-group">
-                    <label for="fullName">Họ và tên</label>
-                    <input type="email" id="fullName" name="fullName" placeholder="Enter your username" required>
+                    <label for="fullName">Fullname:</label>
+                    <input type="text" id="fullName" name="fullName" placeholder="Enter your fullname" required>
                 </div>
                 <div class="input-group">
-                    <label for="username">Địa chỉ email</label>
-                    <input type="email" id="username" name="email" placeholder="Enter your username" required>
+                    <label for="username">Email address:</label>
+                    <input type="email" id="username" name="email" placeholder="Enter your email" required>
                 </div>
                 <div class="input-group">
-                    <label for="password">Mật khẩu</label>
+                    <label for="password">Password:</label>
                     <input type="password" id="password" name="password" placeholder="Enter your password" required>
                 </div>
                 <div class="input-group">
-                    <label for="retypePassword">Nhập lại mật khẩu</label>
+                    <label for="retypePassword">Retype password:</label>
                     <input type="password" id="retypePassword" name="retypePassword" placeholder="Enter your password" required>
                 </div>
-                <button type="submit" class="btn">Đăng ký</button>
+                <button type="submit" class="btn">Sign up</button>
                 <div class="forgot-password">
-                    <span>Bạn đã có tài khoản?<a href="login"> Đăng nhập</a></span>
+                    <span>You have an account.<a href="login"> Sign in</a></span>
                 </div>
             </form>
         </div>

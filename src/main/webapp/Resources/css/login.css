@@ -1,4 +1,3 @@
-@charset "UTF-8";
 *{
     margin: 0;
 }
@@ -24,7 +23,7 @@
 }
 .logo h1{
     font-size: 2.3rem;
-    color: #d8b61b;
+    color: #00D2DC;
     font-weight: 700;
     line-height: 1.2;
 }
@@ -55,7 +54,7 @@
     text-align: center;
     margin-bottom: 20px;
     font-size: 28px;
-    color: #d8b61b;
+    color: #00D2DC;
     font-weight: 600;
 }
 
@@ -82,7 +81,7 @@
 
 
 .btn {
-    background-color:#e2830d;
+    background-color:#00D2DC;
     color: #fff;
     padding: 10px;
     border: none;
@@ -93,7 +92,7 @@
 }
 
 .btn:hover {
-    background-color: #ff8c00;
+    background-color: #08888f;
 }
 
 .forgot-password {

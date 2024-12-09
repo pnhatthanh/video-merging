@@ -9,6 +9,7 @@
     align-items: center;
     padding: 20px 0px;
     border-radius: 2px;
+    border-bottom: 1px solid #EDEEF3;
 }
 .header img{
     width: 50px;
@@ -23,7 +24,7 @@
 }
 .logo h1{
     font-size: 2.3rem;
-    color: #d8b61b;
+    color: #00D2DC;
     font-weight: 700;
     line-height: 1.2;
 }
@@ -47,7 +48,7 @@
     padding: 10px 5px;
 }
 .history h2{
-    color: #d8b61b;
+    color: #00D2DC;
 }
 .content{
     
@@ -64,7 +65,7 @@
 .content h2{
     font-size: 2rem;
     text-align: center;
-    color: #d8b61b;;
+    color: #00D2DC;
 }
 .content form{
     margin-top: 15px;
@@ -100,7 +101,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: #d8b61b;
+    background-color: #00D2DC;
     color: rgb(27, 23, 23);
     font-weight: 600;
 }
@@ -127,22 +128,23 @@ form .choice{
     cursor: pointer;
 }
 .button-submit{
-    background-color: #fff;
-    color: #edc307;
-    border-color: #edc307;
+    background-color: #00D2DC;
+    color: black;
+    
+    border-color: #00D2DC;
 }
 .button-submit:hover{
-    background-color: #edc307;
-    color: #fff;
+    background-color: #00D2DC;
+    color: #e3e0e0;
 }
 .button-reset{
-    background-color: #fff;
-    color: rgb(228, 8, 8);
+    background-color: rgb(228, 8, 8);;
+    color: #fff;
     border-color:  rgb(228, 8, 8);
 }
 .button-reset:hover{
     background-color:  rgb(228, 8, 8);
-    color: #fff;
+    color: black;
 }
 
 .video-preview {
@@ -182,3 +184,48 @@ form .choice{
     border-radius: 50%;
     cursor: pointer;
 }
+.video{
+    display: flex;
+    flex-direction: column;
+    margin-top: 10px;
+    border-bottom: #a3a3a3 solid 1px;
+    padding: 0 5px 5px;
+}
+.uncomplete{
+    flex-direction: column;
+}
+.complete{
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+.video label{
+    display: inline-block;
+    width: 25%;
+    font-size: 14px;
+}
+.video h3{
+    line-height: 18px;
+    font-weight: 550;
+    color: #2A314F;;
+}
+.video progress{
+    display: inline-block;
+    width: 70%;
+}
+.video .button-download{
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   font-size: 20px;
+   color: #00D2DC;
+   cursor: pointer;
+}
+.button-download:hover{
+    color: #05939b;
+}
+.button-download img{
+    width: 100%;
+    height: 100%;
+}
+

@@ -1,7 +1,7 @@
-package Model.BO;
+package model.BO;
 
-import Model.BEAN.User;
-import Model.DAO.UserDAO;
+import model.bean.User;
+import model.DAO.UserDAO;
 
 public class UserBO {
 	private UserDAO userDAO;
