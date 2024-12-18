@@ -46,6 +46,8 @@
     margin-right: 20px;
     box-sizing: border-box;
     padding: 10px 5px;
+    overflow-y: auto;
+    scrollbar-width: thin;
 }
 .history h2{
     color: #00D2DC;

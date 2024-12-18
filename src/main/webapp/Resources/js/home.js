@@ -45,6 +45,7 @@ const progressBar = document.getElementById('progressBar');
 const progressText = document.getElementById('progressText');
 const progressInfo = document.getElementById('progressInfo');
 const processID = document.getElementById('processID');
+const buttonReset=document.getElementById('button_reset')
 uploadForm.addEventListener('submit', function(e) {
 	e.preventDefault();
 
@@ -55,6 +56,7 @@ uploadForm.addEventListener('submit', function(e) {
 
 	xhr.open('POST', uploadForm.action, true);
 	xhr.send(formData);
+	buttonReset.disabled=true;
 	// Periodically query the server for upload progress
 	const interval = setInterval(() => {
 		fetch('http://localhost:8080/Video_Merging/UploadServlet')

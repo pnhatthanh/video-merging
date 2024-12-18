@@ -10,10 +10,14 @@ import java.util.Scanner;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
+import javax.security.auth.message.callback.PrivateKeyCallback.Request;
+import javax.servlet.http.HttpServletRequest;
+
+import org.apache.tomcat.util.http.fileupload.FileUtils;
+
 import model.BO.UpVideoToHDManagerBO;
 
 public class MergeVideoHandler implements Runnable {
-	
 	private static final String ffmpegPath = "D:\\Download\\ffmpeg-7.1-full_build\\ffmpeg-7.1-full_build\\bin\\ffmpeg.exe";
 	private static final String rootFolder = "D:\\SourceVideo";
 	private String uploadFolder ,fileListPath, outFilePath;
@@ -21,6 +25,7 @@ public class MergeVideoHandler implements Runnable {
 	private List<String> listPath = new ArrayList<String>();
 	private String userID;
 	private int pID;
+	
 	
 	public MergeVideoHandler(String userID, int pID) {
 		// TODO Auto-generated constructor stub
@@ -43,7 +48,6 @@ public class MergeVideoHandler implements Runnable {
 		try {
             // Get video duration
             double totalDuration = getTotalVideoDuration();
-            System.out.println(String.format("-------Total Duration: %.2f------------", totalDuration));
             if (totalDuration <= 0) {
                 System.err.println("Failed to retrieve video duration.");
                 return;
@@ -81,12 +85,10 @@ public class MergeVideoHandler implements Runnable {
             int exitCode = process.waitFor();
             if (exitCode == 0) {
             	status=100;
-            	File upF = new File(uploadFolder);
-            	if (upF.exists()) {
-            		upF.delete();
-            	}
-                System.out.println("\nFFmpeg process completed successfully.");
+            	//File upF = new File(uploadFolder);
+            	System.out.println("\nFFmpeg process completed successfully.");
                 System.out.println("\nPrepare to up to HD video.");
+            	
                 UpVideoToHDManagerBO.getInstance().postTask(userID, pID);
             } else {
                 System.err.println("\nFFmpeg process failed.");

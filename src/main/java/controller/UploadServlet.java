@@ -58,15 +58,12 @@ public class UploadServlet extends HttpServlet {
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
+
 		String userID = (String)request.getSession().getAttribute("userID");
-		
-		System.out.println(userID+"in post");//DEBUG
 		
 		int totalFileUpload = request.getParts().size() - 1;
 		UploadVideoManagerBO.getInstance().putStatus(userID, new Integer[] {0,totalFileUpload});
 		
-		System.out.println(totalFileUpload);//DEBUG
 		
 		int pID = MergeVideoMangerBO.getInstance().getNextID();
 		String nameVideo = request.getParameter("nameVideo");

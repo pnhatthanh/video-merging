@@ -10,6 +10,8 @@ import java.util.Scanner;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
+import org.apache.tomcat.util.http.fileupload.FileUtils;
+
 import model.BO.VideoBO;
 
 public class UpVideoToHDHandler implements Runnable {
@@ -78,10 +80,13 @@ public class UpVideoToHDHandler implements Runnable {
             int exitCode = process.waitFor();
             if (exitCode == 0) {
             	status=100;
+          
             	File file = new File(inFilePath);
             	if (file.exists()) {
             		file.delete();
             	}
+            	file=new File(rootFolder+File.separator+userID+File.separator+pID+File.separator+"upload");
+            	FileUtils.deleteDirectory(file);
             	new VideoBO().updateStatus(pID, "Thanh cong");
                 System.out.println("\nFFmpeg process completed successfully.");
             } else {

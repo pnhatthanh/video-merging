@@ -37,7 +37,7 @@
                 </div>
                 <button type="submit" class="btn">Login</button>
                 <div class="forgot-password">
-                    <span>You don't have an account<a href="register">Sign up</a></span>
+                    <span>You don't have an account <a href="register">Sign up</a></span>
                 </div>
             </form>
         </div>

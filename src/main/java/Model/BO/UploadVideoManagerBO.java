@@ -56,7 +56,6 @@ public class UploadVideoManagerBO {
 	
 	private void processFileUpload(String userID, Part part, String filePath) {
         try {
-        	System.out.println("File " + filePath + " is going to be uploaded.");
         	InputStream bis = part.getInputStream();
         	FileOutputStream bos = new FileOutputStream(filePath);
         	byte[] buffer = new byte[1024];
@@ -68,16 +67,12 @@ public class UploadVideoManagerBO {
         		if (b==-1) break;
         		bos.write(buffer,0,b);
         	}
-            System.out.println("File " + filePath + " uploaded successfully.");
             Integer[] curProgress;
             synchronized (key) {
             	curProgress = progressMap.get(userID);
             	curProgress[0]++;
-            	System.out.println(curProgress[0]+"/"+curProgress[1]);
                 progressMap.put(userID, curProgress); 
 			}
-        	
-			
         } catch (Exception e) {
             System.err.println("Error processing file: " + e.getMessage());
         }

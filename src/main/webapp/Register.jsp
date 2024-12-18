@@ -18,10 +18,17 @@
     </section>
     <section  class="body">
         <div class="container">
+        	<%
+        		String error="";
+        		if(request.getAttribute("errorMsg")!=null){
+        			error=(String)request.getAttribute("errorMsg");
+        		}
+        	%>
             <form method="POST" action="register" class="form">
                 <h2>Sign up</h2>
+        		<span style="color: red"><%=error%></span>
                 <div class="input-group">
-                    <label for="fullName">Fullname:</label>
+                    <label for="fullName">Full name:</label>
                     <input type="text" id="fullName" name="fullName" placeholder="Enter your fullname" required>
                 </div>
                 <div class="input-group">

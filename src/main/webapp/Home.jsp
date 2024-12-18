@@ -83,7 +83,7 @@
                 	<input id="videoInput" type="file" name="videoFiles" accept="video/mp4" multiple required>
                 </div>           
                 <div class="choice">
-                    <button class="button-reset" type="reset" onclick="removeAllFile()">Cancel</button>
+                    <button id="button_reset" class="button-reset" type="reset" onclick="removeAllFile()">Cancel</button>
                     <button class="button-submit" type="submit">Submit</button>
                 </div>
                 <div id="progressInfo" style = "display:none">
